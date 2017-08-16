@@ -28,12 +28,12 @@ export class HeatMapComponent implements OnInit {
 
   constructor(private _heatMapService: HeatMapService,
               private _data: DataService) {
-                this._data
-                  .getMessage()
-                  .subscribe(
-                  val => this.color = val
-                );
-              }
+    this._data
+      .getMessage()
+      .subscribe(
+      val => this.color = val
+    );
+  }
 
   ngOnInit() {
     this.points = [];
