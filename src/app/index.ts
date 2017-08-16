@@ -7,7 +7,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MdSelectModule,
         MdButtonModule,
         MdToolbarModule,
-        MdSidenavModule} from '@angular/material';
+        MdSidenavModule,
+        MdListModule} from '@angular/material';
 
 
 import {MainComponent} from './main/main';
@@ -24,13 +25,15 @@ import {TempoComponent} from './tempo/tempo';
     MdButtonModule,
     MdToolbarModule,
     MdSidenavModule,
+    MdListModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?v=3.exp&libraries=visualization'})
   ],
   exports: [
     MdToolbarModule,
     MdSidenavModule,
     MdSelectModule,
-    MdButtonModule
+    MdButtonModule,
+    MdListModule
   ],
   declarations: [
     RootComponent,

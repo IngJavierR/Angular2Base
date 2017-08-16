@@ -3,6 +3,7 @@ import { HeatmapLayer } from '@ngui/map';
 import { Observable } from 'rxjs/Rx';
 
 import { HeatMapService } from '../services/heatmap.service';
+import { DataService } from '../services/data.service';
 
 @Component({
     selector: 'heat-map',
@@ -17,6 +18,7 @@ export class HeatMapComponent implements OnInit {
   points: any[] = [];
   centerpoint = '37.782551, -122.445368';
   pointsResponse: Observable<any[]>;
+  color: string = 'blue';
   private _cord = [
       -122.442688,
       -122.441688,
@@ -24,7 +26,14 @@ export class HeatMapComponent implements OnInit {
       -122.449588
     ];
 
-  constructor(private _heatMapService: HeatMapService) {}
+  constructor(private _heatMapService: HeatMapService,
+              private _data: DataService) {
+                this._data
+                  .getMessage()
+                  .subscribe(
+                  val => this.color = val
+                );
+              }
 
   ngOnInit() {
     this.points = [];

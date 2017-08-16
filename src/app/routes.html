@@ -1,7 +1,14 @@
 <md-sidenav-container>
     <md-toolbar>Angular 2 Base Material</md-toolbar>
     <md-sidenav #sidenav>
-        Jolly good!
+        <md-list>
+            <md-list-item>Período </md-list-item>
+            <md-list-item> Salt </md-list-item>
+            <md-list-item> Paprika </md-list-item>
+        </md-list>
+        <button type="button" md-button (click)='changeColor()'>
+            Change Title Color
+        </button>
     </md-sidenav>
     <button type="button" md-button (click)="sidenav.open()">
         Open sidenav

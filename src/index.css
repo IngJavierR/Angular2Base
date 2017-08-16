@@ -79,3 +79,7 @@ a:hover {
   text-align: center;
   color: white;
 }
+
+md-sidenav {
+  width: 200px;
+}
