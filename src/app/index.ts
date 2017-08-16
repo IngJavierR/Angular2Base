@@ -4,11 +4,15 @@ import {routing, RootComponent} from './routes';
 import {NguiMapModule} from '@ngui/map';
 import {HttpModule} from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdSelectModule, MdButtonModule} from '@angular/material';
+import {MdSelectModule,
+        MdButtonModule,
+        MdToolbarModule,
+        MdSidenavModule} from '@angular/material';
 
 
 import {MainComponent} from './main/main';
 import {HeatMapComponent} from './heatmap/heatmap';
+import {TempoComponent} from './tempo/tempo';
 
 @NgModule({
   imports: [
@@ -18,16 +22,21 @@ import {HeatMapComponent} from './heatmap/heatmap';
     BrowserAnimationsModule,
     MdSelectModule,
     MdButtonModule,
+    MdToolbarModule,
+    MdSidenavModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?v=3.exp&libraries=visualization'})
   ],
   exports: [
+    MdToolbarModule,
+    MdSidenavModule,
     MdSelectModule,
     MdButtonModule
   ],
   declarations: [
     RootComponent,
     MainComponent,
-    HeatMapComponent
+    HeatMapComponent,
+    TempoComponent
   ],
   bootstrap: [RootComponent]
 })
