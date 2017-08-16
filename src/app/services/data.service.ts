@@ -6,7 +6,7 @@ export class DataService {
 
     private message = new Subject<string>();
 
-    getMessage(){
+    getMessage() {
         return this.message.asObservable();
     }
 
